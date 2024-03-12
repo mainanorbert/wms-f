@@ -1,0 +1,11 @@
+server {
+    listen <%= ENV["PORT"] %>;
+    server_name _;
+
+    root /wms-f/nober/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
